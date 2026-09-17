@@ -35,6 +35,10 @@ while ordering:
 
 clear_screen()
 print(f"Total Order Price: {total_price:.2f}")
+
+# DISCOUNT HANDLING
+total_price = calculate_discount(total_price)
+
 print("Your Order:")
 for item in customer_order:
     print(item)

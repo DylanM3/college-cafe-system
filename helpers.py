@@ -18,3 +18,10 @@ def greet_customer():
     return customer_name
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+def calculate_discount(total_price):
+    if total_price > 10:
+        print("Orders over £10 qualify for 10% discount")
+        total_price = total_price * 0.9
+        print(f"Total Price (after discounts): {total_price:.2f}")
+        return total_price
