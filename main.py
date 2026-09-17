@@ -19,29 +19,30 @@ menu = {
 
 # PROGRAM LOOP
 
-customer_name = greet_customer()
-while ordering:
-    customer_choice, amount = get_customer_choice(menu, customer_name)
+if __name__ == '__main__':
+    customer_name = greet_customer()
+    while ordering:
+        customer_choice, amount = get_customer_choice(menu, customer_name)
 
-    for item in range(0, amount):
-        customer_order.append(customer_choice)
-        total_price += float(menu[customer_choice]) 
+        for item in range(0, amount):
+            customer_order.append(customer_choice)
+            total_price += float(menu[customer_choice]) 
 
-    order_again = input("Would you like to make another order? ")
-    if order_again.lower() in ['y', 'yes', 'continue']:
-        clear_screen()
-    else:
-        ordering = False
+        order_again = input("Would you like to make another order? ")
+        if order_again.lower() in ['y', 'yes', 'continue']:
+            clear_screen()
+        else:
+            ordering = False
 
-clear_screen()
-print(f"Total Order Price: {total_price:.2f}")
+    clear_screen()
+    print(f"Total Order Price: {total_price:.2f}")
 
-# DEAL HANDLING
-total_price = calculate_deals(customer_order, total_price)
+    # DEAL HANDLING
+    total_price = calculate_deals(customer_order, total_price)
 
-# DISCOUNT HANDLING
-total_price = calculate_discount(total_price)
+    # DISCOUNT HANDLING
+    total_price = calculate_discount(total_price)
 
-print("Your Order:")
-for item in customer_order:
-    print(item)
+    print("Your Order:")
+    for item in customer_order:
+        print(item)
