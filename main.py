@@ -5,6 +5,7 @@ from selectionHelpers import *
 
 ordering = True
 total_price = 0
+customer_order = []
 
 # PRICES
 
@@ -22,7 +23,8 @@ customer_name = greet_customer()
 while ordering:
     customer_choice = get_customer_choice(menu, customer_name)
 
-    total_price =+ float(menu[customer_choice])
+    customer_order.append(customer_choice)
+    total_price += float(menu[customer_choice])
 
     order_again = input("Would you like to make another order? ")
     if order_again.lower() in ['y', 'yes', 'continue']:
@@ -30,4 +32,5 @@ while ordering:
     else:
         ordering = False
 
-print(f"{total_price:.2f}")
+print(f"Total Order Price: {total_price:.2f}")
+print(f"Your Order: {customer_order}")

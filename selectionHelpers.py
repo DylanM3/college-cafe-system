@@ -2,7 +2,6 @@ from helpers import *
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-# PRINT MENU (ENUMERATE SELECTION NUMBERS)
 def print_menu(menu):
     print() # Formatting
 
