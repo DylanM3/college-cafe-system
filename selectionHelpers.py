@@ -13,65 +13,72 @@ def print_menu(menu):
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 def get_customer_choice(menu, customer_name):
-    print_menu(menu)
-    customer_choice = input("What would you like to order? ")
 
-    match customer_choice:
+    correctChoice = False
+    while correctChoice == False:
 
-        case '1':
-            customer_choice = "Latte"
-            confirmation = confirm_customer_choice(customer_name, customer_choice)
-            if confirmation == True:
-                print(f"Ordering a Latte... (x{amount})")
-                amount = order_bulk(customer_name, customer_choice) # Option to order bulk
-                return customer_choice, amount
-            else:
-                clear_screen() # Clear screen for an easy view of the menu once function is recalled
-                get_customer_choice(menu, customer_name) # Recursively call the function to correctly order
+        print_menu(menu)
+        customer_choice = input("What would you like to order? ")
 
-        case '2':
-            customer_choice = "Tea"
-            confirmation = confirm_customer_choice(customer_name, customer_choice)
-            if confirmation == True:
-                print(f"Ordering a Tea... (x{amount})")
-                amount = order_bulk(customer_name, customer_choice)
-                return customer_choice, amount
-            else:
-                clear_screen()
-                get_customer_choice(menu, customer_name)
+        match customer_choice:
 
-        case '3':
-            customer_choice = "Hot Chocolate"
-            confirmation = confirm_customer_choice(customer_name, customer_choice)
-            if confirmation == True:
-                amount = order_bulk(customer_name, customer_choice)
-                print(f"Ordering Hot Chocolate... (x{amount})")
-                return customer_choice, amount
-            else:
-                get_customer_choice(menu, customer_name)
+            case '1':
+                customer_choice = "Latte"
+                confirmation = confirm_customer_choice(customer_name, customer_choice)
+                if confirmation == True:
+                    amount = order_bulk(customer_name, customer_choice)
+                    print(f"Ordering a Latte... (x{amount})")
+                    return customer_choice, amount
+                else:
+                    clear_screen()
+                    pass
 
-        case '4':
-            customer_choice = "Cookie"
-            confirmation = confirm_customer_choice(customer_name, customer_choice)
-            if confirmation == True:
-                amount = order_bulk(customer_name, customer_choice)
-                print(f"Ordering a Cookie... (x{amount})")
-                return customer_choice, amount
-            else:
-                get_customer_choice(menu, customer_name)
+            case '2':
+                customer_choice = "Tea"
+                confirmation = confirm_customer_choice(customer_name, customer_choice)
+                if confirmation == True:
+                    amount = order_bulk(customer_name, customer_choice)
+                    print(f"Ordering a Tea... (x{amount})")
+                    return customer_choice, amount
+                else:
+                    clear_screen()
+                    get_customer_choice(menu, customer_name)
 
-        case '5':
-            customer_choice = "Soft Drink"
-            confirmation = confirm_customer_choice(customer_name, customer_choice)
-            if confirmation == True:
-                amount = order_bulk(customer_name, customer_choice)
-                print(f"Ordering a Soft Drink... (x{amount})")
-                return customer_choice, amount
-            else:
-                get_customer_choice(menu, customer_name)
+            case '3':
+                customer_choice = "Hot Chocolate"
+                confirmation = confirm_customer_choice(customer_name, customer_choice)
+                if confirmation == True:
+                    amount = order_bulk(customer_name, customer_choice)
+                    print(f"Ordering Hot Chocolate... (x{amount})")
+                    return customer_choice, amount
+                else:
+                    clear_screen()
+                    pass
 
-        case _:
-            print("Error: Item Not Found.")
+            case '4':
+                customer_choice = "Cookie"
+                confirmation = confirm_customer_choice(customer_name, customer_choice)
+                if confirmation == True:
+                    amount = order_bulk(customer_name, customer_choice)
+                    print(f"Ordering a Cookie... (x{amount})")
+                    return customer_choice, amount
+                else:
+                    clear_screen()
+                    pass
+
+            case '5':
+                customer_choice = "Soft Drink"
+                confirmation = confirm_customer_choice(customer_name, customer_choice)
+                if confirmation == True:
+                    amount = order_bulk(customer_name, customer_choice)
+                    print(f"Ordering a Soft Drink... (x{amount})")
+                    return customer_choice, amount
+                else:
+                    clear_screen()
+                    pass
+
+            case _:
+                print("Error: Item Not Found.")
 
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 

@@ -25,7 +25,7 @@ while ordering:
 
     for item in range(0, amount):
         customer_order.append(customer_choice)
-        total_price += float(menu[customer_choice])
+        total_price += float(menu[customer_choice]) 
 
     order_again = input("Would you like to make another order? ")
     if order_again.lower() in ['y', 'yes', 'continue']:
